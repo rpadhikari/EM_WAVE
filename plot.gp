@@ -1,14 +1,15 @@
 # plot script, written by Rajendra Adhikari
-# May 17, 2017
+# Feb 14th, 2021
 set term postscript enhanced color 'Helvetica-Bold,16'
-set output 'pendulum.ps'
-set xl 'Angle (deg)'
-set yl 'Period (sec)'
-set xr [5:30]
-plot 'out.dat' w lp pt 6 ps 1 noti
+set output 'TR.ps'
+set xl 'Refractive index'
+set yl 'Field ratios (E/E_0)'
+set xr [1:1.67]
+plot 'data.dat' u 1:2 w l 1 ti 'Tr',\
+'data.dat' u 1:3 w l ti 'Re'
 set output
-! ps2pdf pendulum.ps
-! rm pendulum.ps
-# how to execute this script? issue the followinf line on the terminal
+! ps2pdf TR.ps
+! rm TR.ps
+# how to execute this script? issue the following line on the terminal
 # gnuplot plot.gp
 
